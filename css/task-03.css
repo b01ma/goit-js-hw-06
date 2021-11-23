@@ -1,0 +1,23 @@
+.gallery {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.item {
+    list-style: none;
+}
+
+.item:not(:last-child) {
+    margin-right: 20px;
+}
+
+img {
+    width: 340px;
+    height: 200px;
+    object-fit: cover;
+}

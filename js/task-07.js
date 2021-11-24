@@ -9,6 +9,6 @@ const onSlideChange = (event) => {
     
     console.log(`${event.currentTarget.valueAsNumber}px`);
     text.style.fontSize = `${event.currentTarget.valueAsNumber}px`;
-}
+};
 
 input.addEventListener('input', onSlideChange);

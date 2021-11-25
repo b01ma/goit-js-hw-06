@@ -22,7 +22,8 @@ const onSubmitForm = (event) => {
          }
         console.log(dataFrom);
 
-        return dataFrom;
+        form.reset();
+
     }
    
 }

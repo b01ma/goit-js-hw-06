@@ -3,18 +3,21 @@ function getRandomHexColor() {
 }
 
 const boxes = document.querySelector('#boxes');
-
 const controls = document.querySelector('#controls');
-const inputField = controls.children[0];
-const createBtn = controls.children[1];
-const destroyBtn = controls.children[2]
-
-// console.log(inputField, createBtn, destroyBtn);
+const inputField = controls.children[0]; // тут я не знаю как лучше сделать ссылку на эелемент
+const createBtn = controls.children[1]; // тут я не знаю как лучше сделать ссылку на эелемент, возможно через dataset, но не смог разобраться 
+const destroyBtn = controls.children[2] // тут я не знаю как лучше сделать ссылку на эелемент, возможно через dataset, но не смог разобраться 
 
 const onClickCreate = () => {
   console.log(inputField.value);
   
-let x = 30;
+  let x = 20;
+  
+  if (boxes.children.length === 0) {
+    x = 20;
+  } else {
+    x = boxes.lastChild.clientHeight;
+  }
 
   for (let i = 0; i < inputField.value; i += 1) {
     
@@ -33,12 +36,16 @@ let x = 30;
     el.style.backgroundColor = getRandomHexColor();
       
     boxes.append(el);
+
   }
+
 };
 
 const onClickDestroy = () => {
+
+  const numberOfChildren = boxes.children.length;
   
-  for (let i = 0; i < inputField.value; i += 1) {
+  for (let i = 0; i < numberOfChildren; i += 1) {
     boxes.lastChild.remove();
   }
   inputField.value = '0';
